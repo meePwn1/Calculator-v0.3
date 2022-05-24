@@ -1,0 +1,250 @@
+@import url(https://fonts.googleapis.com/css?family=Mulish:regular,600&display=swap);
+@import "_fonts";
+@import "_icons";
+@import "_nullstyle";
+
+//Переменные цветов
+$colorPrimary: #00b0d7;
+$colorAccent: #ff6060;
+$colorLight: #fff;
+$colorDark: #000;
+$colorDisplayDark: #00223a;
+$colorDisplayLight: #fafafa;
+
+$colorActionsDark: #001b2f;
+$colorActionsLight: #e9f6ff;
+
+//Размер кнопок
+$buttonSize: 64px;
+
+body {
+	font-family: Mulish;
+	font-weight: 400;
+	transition: background-color 0.3s ease 0s;
+	background-color: rgba($color: $colorActionsDark, $alpha: 0.9);
+	&.dark {
+		background-color: $colorActionsLight;
+	}
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100%;
+	padding: 50px;
+}
+
+.calculator {
+	position: relative;
+	width: 320px;
+	border-radius: 20px;
+	box-shadow: 8px 32px 64px #001b2f62;
+	overflow: hidden;
+	&.calculator__light {
+		.calculator__display {
+			background-color: $colorDisplayLight;
+			color: $colorDark;
+		}
+		.calculator__actions {
+			background-color: $colorActionsLight;
+			color: $colorDark;
+		}
+		.history-block-calculator {
+			background-color: $colorActionsLight;
+			color: $colorDark;
+			&__btn {
+				color: $colorAccent;
+				border-color: $colorAccent;
+				@media (any-hover: hover) {
+					&:hover {
+						color: #da3d3d;
+					}
+				}
+			}
+		}
+	}
+	// .calculator__display
+	&__display {
+		background-color: $colorDisplayDark;
+		padding: 35px 24px;
+		padding-bottom: 44px;
+		margin-bottom: -24px;
+		color: $colorLight;
+		text-align: right;
+		transition: all 0.3s ease 0s;
+	}
+	// .calculator__history
+	&__history {
+		font-size: 24px;
+		margin-bottom: 16px;
+		overflow: hidden;
+		white-space: nowrap;
+		display: flex;
+		justify-content: flex-end;
+		height: 24px;
+
+		strong {
+			color: $colorAccent;
+		}
+	}
+	// .calculator__total
+	&__total {
+		font-size: 32px;
+		font-weight: 600;
+		overflow: hidden;
+		white-space: nowrap;
+		display: flex;
+		justify-content: flex-end;
+	}
+	// .calculator__actions
+	&__actions {
+	}
+	// .calculator__theme
+	&__theme {
+	}
+}
+.actions-calculator {
+	padding: 16px;
+	padding-bottom: 32px;
+	background-color: $colorActionsDark;
+	border-radius: 20px;
+	color: $colorLight;
+	font-size: 24px;
+	transition: all 0.3s ease 0s;
+	// .actions-calculator__row
+	&__row {
+		display: flex;
+		justify-content: space-between;
+	}
+	// .actions-calculator__col
+	&__col {
+		width: $buttonSize;
+		height: $buttonSize;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		img {
+			pointer-events: none;
+		}
+	}
+	// .actions-calculator__reset
+	&__reset {
+		color: $colorAccent;
+	}
+	// .actions-calculator__action
+	&__action {
+		color: $colorPrimary;
+	}
+	// .calculator__history-block
+	&__history-block {
+	}
+}
+.theme-calculator {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	width: 20px;
+	height: 20px;
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	cursor: pointer;
+	color: #fff;
+	&.dark {
+		span:nth-of-type(1) {
+			margin-left: calc(20px * -1);
+		}
+		span:nth-of-type(2) {
+			color: $colorActionsDark;
+		}
+	}
+}
+
+.history-block-calculator {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 350px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	z-index: 1;
+	background-color: $colorActionsDark;
+	padding: 15px;
+	color: $colorLight;
+	transform: translate(0px, 100%);
+	transition: transform 0.3s ease 0s;
+	border-radius: 20px;
+	overflow: hidden;
+	&.active {
+		transform: translate(0px, 0px);
+	}
+	&__btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		border-radius: 50%;
+		font-weight: 600;
+		min-width: 25px;
+		min-height: 25px;
+		border: 2px solid $colorPrimary;
+		top: 10px;
+		left: 20px;
+		color: $colorPrimary;
+		cursor: pointer;
+		transition: color 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: rgb(43, 101, 139);
+			}
+		}
+	}
+	// .history-block-calculator__wrapper
+	&__wrapper {
+		position: relative;
+		width: 100%;
+		&:not(:last-child) {
+			margin-bottom: 20px;
+			&::before {
+				content: "";
+				position: absolute;
+				right: 0;
+				bottom: -10px;
+				border-radius: 20px;
+				height: 2px;
+				width: 50%;
+				background-color: $colorAccent;
+				display: block;
+			}
+		}
+	}
+	// .history-block-calculator__history
+	&__history {
+		font-size: 24px;
+		margin-bottom: 5px;
+		overflow: hidden;
+		white-space: nowrap;
+		display: flex;
+		justify-content: flex-end;
+		height: 24px;
+		color: inherit;
+		strong {
+			color: $colorAccent;
+		}
+	}
+	// .history-block-calculator__total
+	&__total {
+		color: inherit;
+		font-size: 32px;
+		font-weight: 600;
+		overflow: hidden;
+		white-space: nowrap;
+		display: flex;
+		justify-content: flex-end;
+	}
+}

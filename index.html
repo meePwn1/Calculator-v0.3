@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Calculator</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="detstvo"></div>
+		<div class="calculator">
+			<div class="calculator__display">
+				<div class="calculator__history"></div>
+				<div class="calculator__total">0</div>
+			</div>
+			<div class="calculator__actions actions-calculator">
+				<div class="actions-calculator__row">
+					<div class="actions-calculator__col actions-calculator__reset" data-type="clear">C</div>
+					<div class="actions-calculator__col actions-calculator__action" data-type="percent">%</div>
+					<div class="actions-calculator__col actions-calculator__action" data-type="delete">⌫</div>
+					<div class="actions-calculator__col actions-calculator__action" data-type="/">÷</div>
+				</div>
+				<div class="actions-calculator__row">
+					<div class="actions-calculator__col" data-type="7">7</div>
+					<div class="actions-calculator__col" data-type="8">8</div>
+					<div class="actions-calculator__col" data-type="9">9</div>
+					<div class="actions-calculator__col actions-calculator__action" data-type="*">×</div>
+				</div>
+				<div class="actions-calculator__row">
+					<div class="actions-calculator__col" data-type="4">4</div>
+					<div class="actions-calculator__col" data-type="5">5</div>
+					<div class="actions-calculator__col" data-type="6">6</div>
+					<div class="actions-calculator__col actions-calculator__action" data-type="-">-</div>
+				</div>
+				<div class="actions-calculator__row">
+					<div class="actions-calculator__col" data-type="1">1</div>
+					<div class="actions-calculator__col" data-type="2">2</div>
+					<div class="actions-calculator__col" data-type="3">3</div>
+					<div class="actions-calculator__col actions-calculator__action" data-type="+">+</div>
+				</div>
+				<div class="actions-calculator__row">
+					<div class="actions-calculator__col" data-type="float">.</div>
+					<div class="actions-calculator__col" data-type="0">0</div>
+					<div class="actions-calculator__col" data-type="history"><img src="img/_icon-history.svg"></div>
+					<div class="actions-calculator__col actions-calculator__action" data-type="=">=</div>
+				</div>
+			</div>
+			<div class="calculator__theme theme-calculator">
+				<span class="_icon-sun"></span>
+				<span class="_icon-moon"></span>
+			</div>
+			<div class="calculator__history-block history-block-calculator">
+				<span class="history-block-calculator__btn">X</span>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="js/app.js"></script>
+</body>
+
+</html>
